@@ -17,7 +17,9 @@ sizePicker.addEventListener('submit', function(event) {
 
 
 function makeGrid() {
-  document.querySelector('tr').remove();
+  if (table.firstChild) {
+    table.innerHTML = '';
+  };
   const height = document.getElementById('inputHeight').value;
   const width = document.getElementById('inputWidth').value;
   for (let i = 0; i < width; i++) {
