@@ -13,8 +13,15 @@ sizePicker.addEventListener('submit', function(event) {
   makeGrid();
 
 });
-// When size is submitted by the user, call makeGrid()
 
+// adds color to cells when clicked
+table.addEventListener('mousedown', function(event) {
+  const color = colorPicker.value;
+  event.target.style.cssText = `background-color: ${color};`;
+});
+
+
+// When size is submitted by the user, call makeGrid()
 
 function makeGrid() {
   if (table.firstChild) {
